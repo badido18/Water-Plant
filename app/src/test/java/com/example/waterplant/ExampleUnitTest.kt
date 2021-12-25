@@ -1,4 +1,4 @@
-package fr.uparis.projectmadjidanes
+package com.example.waterplant
 
 import org.junit.Test
 
