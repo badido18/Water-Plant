@@ -9,6 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WaterPlant">
+        <activity android:name=".ModifyPlant"></activity>
+        <activity android:name=".Decaler" />
+        <activity android:name=".Period" />
+        <activity android:name=".FreqArrosage" />
+        <activity android:name=".Arrosage" />
+        <activity android:name=".CreatePlant" />
+        <activity android:name=".PlantFiche" />
+        <activity android:name=".Splash" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
