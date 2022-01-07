@@ -1,4 +1,4 @@
-package fr.uparis.anesbouzouaouiexamen
+package com.example.waterplant
 
 import android.graphics.Color
 import android.util.Log
@@ -7,9 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.waterplant.R
 import com.example.waterplant.databinding.ActivityMainBinding
-import fr.irif.zielonka.exam2022session1gra.Plant
 
 class MainAdapter(val selectedLivres : MutableList<Long>, binding : ActivityMainBinding) : RecyclerView.Adapter<MainAdapter.VH>(){
         //la liste d'auteurs à afficher

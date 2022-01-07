@@ -3,13 +3,10 @@ package com.example.waterplant
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.waterplant.databinding.ActivityMainBinding
-import fr.uparis.anesbouzouaouiexamen.MainAdapter
-import fr.uparis.anesbouzouaouiexamen.MainViewModel
 
 
 class MainActivity : AppCompatActivity() {

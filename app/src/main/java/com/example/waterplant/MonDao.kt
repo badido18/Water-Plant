@@ -2,13 +2,14 @@ package com.example.waterplant
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import fr.irif.zielonka.exam2022session1gra.Plant
 
 data class  PlantItem(
     var name: String,
     var latinName: String,
     var freqArosage: String,
+    var lastArosage: String,
     var freqNutriment: String,
+    var lastNutriment: String,
 //    var photo: String  // pour apres
 )
 

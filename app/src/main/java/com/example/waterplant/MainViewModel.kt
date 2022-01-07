@@ -1,12 +1,8 @@
-package fr.uparis.anesbouzouaouiexamen
+package com.example.waterplant
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import com.example.waterplant.BDPlants
-import com.example.waterplant.IdPlant
-import fr.irif.zielonka.exam2022session1gra.Plant
-import com.example.waterplant.PlantItem
 
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {

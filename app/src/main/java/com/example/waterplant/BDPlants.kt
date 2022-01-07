@@ -4,7 +4,6 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import fr.irif.zielonka.exam2022session1gra.Plant
 
 @Database(entities=[Plant::class], version = 2)
 abstract class BDPlants : RoomDatabase() {
