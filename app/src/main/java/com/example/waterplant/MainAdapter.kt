@@ -7,10 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.waterplant.databinding.ActivityMainBinding
 import fr.irif.zielonka.exam2022session1gra.Plant
-import fr.uparis.anesbouzouaouiexamen.databinding.ActivityOperationsBinding
 
-class MainAdapter(val selectedLivres : MutableList<Long>, binding : ActivityOperationsBinding) : RecyclerView.Adapter<MainAdapter.VH>(){
+class MainAdapter(val selectedLivres : MutableList<Long>, binding : ActivityMainBinding) : RecyclerView.Adapter<MainAdapter.VH>(){
         //la liste d'auteurs à afficher
         private var allPlants : List<Plant> = listOf()
         //private var checkedLivresIds : MutableList<Long> = mutableListOf()

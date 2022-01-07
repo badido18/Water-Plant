@@ -7,8 +7,10 @@ import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.waterplant.databinding.ActivityMainBinding
 import fr.uparis.anesbouzouaouiexamen.MainAdapter
 import fr.uparis.anesbouzouaouiexamen.MainViewModel
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
@@ -21,13 +23,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityOperationsBinding.inflate( layoutInflater )
+        binding = ActivityMainBinding.inflate( layoutInflater )
         setContentView(binding.root)
         // setContentView(R.layout.activity_add_authors)
         //nom = findViewById<EditText>(R.id.nom)
         //prenom = findViewById<EditText>(R.id.prenom)
-        binding.recycler.layoutManager = LinearLayoutManager(this)
-        binding.recycler.adapter = adapter
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+        binding.recyclerView.adapter = adapter
 
         /* quand model.authors change mettre à jour la liste d'auteurs dans adapter */
         model.authors.observe(this){
@@ -36,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    /*
     //callback function pour le bouton "ajouter auteur"
     fun addLivre( v: View){
         val auteur_ = binding.auteur.text.toString().trim()
@@ -62,6 +65,7 @@ class MainActivity : AppCompatActivity() {
         binding.titre.text.clear()
         binding.emplacement.text.clear()
     }
+*/
 
     fun afficherDialog( s: String ){
         AlertDialog.Builder(this)
