@@ -14,9 +14,7 @@ import fr.uparis.anesbouzouaouiexamen.MainViewModel
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
-    //lateinit var nom : EditText
-    //lateinit var prenom : EditText
-    //val recyclerView by lazy { findViewById<RecyclerView>(R.id.recyclerView) }
+//    get MainViewModel et MainAdapter
     val model by lazy{ ViewModelProvider(this).get(MainViewModel::class.java) }
     val adapter by lazy{  MainAdapter(model.selectedLivres, binding) }
     val TAG = "Operationsds"
@@ -31,8 +29,8 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = adapter
 
-        /* quand model.authors change mettre à jour la liste d'auteurs dans adapter */
-        model.authors.observe(this){
+        /* quand plants change mettre à jour la liste d'auteurs dans adapter */
+        model.plants.observe(this){
             Log.d(TAG, "nouvelle liste auteurs")
             adapter.setLivres( it )
         }

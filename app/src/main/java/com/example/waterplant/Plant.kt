@@ -10,7 +10,9 @@ data class Plant(
     var name: String,
     var latinName: String,
     var freqArosage: String,
+    var lastArosage: String,
     var freqNutriment: String,
+    var lastNutriment: String,
 //    var photo: String  // pour apres
 )
 

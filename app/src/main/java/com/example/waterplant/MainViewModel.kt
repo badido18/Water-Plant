@@ -12,25 +12,25 @@ import com.example.waterplant.PlantItem
 class MainViewModel(application: Application) : AndroidViewModel(application) {
     val dao = BDPlants.getDatabase(application).monDao()
 
-    val authors : LiveData<List<Plant>> = dao.getLivres()
+    val plants : LiveData<List<Plant>> = dao.getPlants()
 
     /* la liste d'auteurs sélectionés */
     val selectedLivres: MutableList<Long> = mutableListOf()
 //    var idSelectedLivre : Int = 0
 
-    val TAG = "AddLivreViewModel"
+    val TAG = "MainViewModel"
 //    nom, titre, emplacement
-    fun addLivre(auteur: String, titre: String, emplacement: String) {
-        Thread {
-            dao.insererLivre(PlantItem(auteur = auteur.trim(), titre = titre.trim(), emplacement = emplacement.trim() ))
-        }.start()
-    }
-
-    /* supprimer les auteurs qui se trouvent sur la liste selectedLivres */
-    fun removeOneLivre() {
-        Thread {
-            dao.deleteLivre( IdPlant(selectedLivres[0] ))
-            selectedLivres.clear()
-        }.start()
-    }
+//    fun addLivre(auteur: String, titre: String, emplacement: String) {
+//        Thread {
+//            dao.insererLivre(PlantItem(auteur = auteur.trim(), titre = titre.trim(), emplacement = emplacement.trim() ))
+//        }.start()
+//    }
+//
+//    /* supprimer les auteurs qui se trouvent sur la liste selectedLivres */
+//    fun removeOneLivre() {
+//        Thread {
+//            dao.deleteLivre( IdPlant(selectedLivres[0] ))
+//            selectedLivres.clear()
+//        }.start()
+//    }
 }

@@ -17,7 +17,7 @@ abstract class BDPlants : RoomDatabase() {
         fun getDatabase( context : Context): BDPlants {
             if( instance != null )
                 return instance!!
-            val db = Room.databaseBuilder( context.applicationContext,  BDPlants::class.java , "livres")
+            val db = Room.databaseBuilder( context.applicationContext,  BDPlants::class.java , "Plants")
                 .fallbackToDestructiveMigration() /* bd détruite si on change la version */
                 .build()
             instance = db
