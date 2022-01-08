@@ -7,12 +7,14 @@ import androidx.room.RoomDatabase
 
 @Database(entities=[Plant::class], version = 2)
 abstract class BDPlants : RoomDatabase() {
+
     abstract fun monDao(): MonDao
 
     companion object {
-        @Volatile
+
         private var instance: BDPlants? = null
 
+        @Synchronized
         fun getDatabase( context : Context): BDPlants {
             if( instance != null )
                 return instance!!

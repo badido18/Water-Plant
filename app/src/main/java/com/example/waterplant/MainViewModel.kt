@@ -1,32 +1,20 @@
 package com.example.waterplant
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-
+import androidx.lifecycle.MutableLiveData
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
     val dao = BDPlants.getDatabase(application).monDao()
+    var plants : LiveData<List<Plant>> = MutableLiveData()
 
-    val plants : LiveData<List<Plant>> = dao.getPlants()
+    fun loadPlants(){
+        Thread {
+            this.plants = dao.getPlants()
 
-    /* la liste d'auteurs sélectionés */
-    val selectedLivres: MutableList<Long> = mutableListOf()
-//    var idSelectedLivre : Int = 0
+        }.start()
+    }
 
-    val TAG = "MainViewModel"
-//    nom, titre, emplacement
-//    fun addLivre(auteur: String, titre: String, emplacement: String) {
-//        Thread {
-//            dao.insererLivre(PlantItem(auteur = auteur.trim(), titre = titre.trim(), emplacement = emplacement.trim() ))
-//        }.start()
-//    }
-//
-//    /* supprimer les auteurs qui se trouvent sur la liste selectedLivres */
-//    fun removeOneLivre() {
-//        Thread {
-//            dao.deleteLivre( IdPlant(selectedLivres[0] ))
-//            selectedLivres.clear()
-//        }.start()
-//    }
 }
