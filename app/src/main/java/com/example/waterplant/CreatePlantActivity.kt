@@ -18,6 +18,14 @@ class CreatePlantActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
+        binding.enregistrer.setOnClickListener {
+            ajouterPlant()
+        }
+
+        binding.annuler.setOnClickListener {
+            finish()
+        }
     }
 
     fun ajouterPlant(){
@@ -32,6 +40,9 @@ class CreatePlantActivity : AppCompatActivity() {
                 .show()
         }else{
             model.addPlant(PlantItem(nom,latin,"","","",""))
+            //empty the fields
+            binding.nom.setText("")
+            binding.nomLatin.setText("")
         }
 
     }

@@ -159,7 +159,7 @@
         app:layout_constraintStart_toStartOf="@+id/scrollView2">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/enregistrer"
             android:layout_width="155sp"
             android:layout_height="70sp"
             android:fontFamily="@font/nunito_black"
@@ -168,7 +168,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/annuler"
             android:layout_width="155sp"
             android:layout_height="70sp"
             android:backgroundTint="@color/Red"

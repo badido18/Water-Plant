@@ -6,4 +6,111 @@
     android:layout_height="match_parent"
     tools:context=".PlantFiche">
 
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="36dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/nunito_bold"
+        android:text="Retour"
+        android:textColor="@color/MainGreen"
+        app:layout_constraintBottom_toBottomOf="@+id/back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/back"
+        app:layout_constraintTop_toTopOf="@+id/back" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/nunito_black"
+        android:text="Nom de la plante"
+        android:textColor="@color/MainGreen"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/back"
+        app:layout_constraintTop_toBottomOf="@+id/back" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="prochain arrosage"
+        android:textColor="@color/MainGreen"
+        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/nunito_bold"
+        android:text="Lundi 25 dec 2022"
+        android:textColor="@color/MainGreen"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="0dp"
+        android:layout_height="100sp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <Button
+        android:id="@+id/freq_arro_btn"
+        android:layout_width="0dp"
+        android:layout_height="70sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
+        android:fontFamily="@font/nunito_black"
+        android:text="Frequence d'arrosage"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+    <Button
+        android:id="@+id/modif_btn"
+        android:layout_width="0dp"
+        android:layout_height="70sp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/nunito_black"
+        android:text="Modifier"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/freq_arro_btn"
+        app:layout_constraintStart_toStartOf="@+id/freq_arro_btn"
+        app:layout_constraintTop_toBottomOf="@+id/freq_arro_btn" />
+
+    <Button
+        android:id="@+id/supp_btn"
+        android:layout_width="0dp"
+        android:layout_height="70sp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/Red"
+        android:fontFamily="@font/nunito_black"
+        android:text="Supprimer"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/modif_btn"
+        app:layout_constraintStart_toStartOf="@+id/modif_btn"
+        app:layout_constraintTop_toBottomOf="@+id/modif_btn" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

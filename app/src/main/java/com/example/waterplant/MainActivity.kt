@@ -11,14 +11,13 @@ import com.example.waterplant.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityMainBinding
+    private val binding by lazy {ActivityMainBinding.inflate( layoutInflater )}
     private val model  by lazy {ViewModelProvider(this).get(MainViewModel::class.java)}
-    private val adapter by lazy { MainAdapter(model.plants) }
+    private val adapter by lazy { MainAdapter() }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate( layoutInflater )
         setContentView(binding.root)
 
         model.loadPlants()
