@@ -3,6 +3,7 @@ package com.example.waterplant
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.waterplant.adapters.MainAdapter
@@ -32,6 +33,13 @@ class MainActivity : AppCompatActivity() {
         binding.addButton.setOnClickListener {
             var intent: Intent = Intent(this, CreatePlantActivity::class.java)
             startActivity(intent)
+        }
+    }
+
+
+    fun testerArrosage(v: View)  {
+        Intent(this,ArrosageActivity::class.java).also {
+            startActivity(it)
         }
     }
 }
