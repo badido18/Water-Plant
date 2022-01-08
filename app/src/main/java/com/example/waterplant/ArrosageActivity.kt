@@ -13,5 +13,8 @@ class ArrosageActivity : AppCompatActivity() {
         setContentView(binding.root) // binding
 
 
+        binding.back.setOnClickListener {
+            finish()
+        }
     }
 }

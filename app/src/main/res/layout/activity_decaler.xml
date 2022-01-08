@@ -28,7 +28,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <Button
-        android:id="@+id/supp_btn2"
+        android:id="@+id/btnAnnuler"
         android:layout_width="0dp"
         android:layout_height="70sp"
         android:layout_marginStart="40dp"
@@ -36,7 +36,7 @@
         android:layout_marginEnd="40dp"
         android:backgroundTint="@color/Red"
         android:fontFamily="@font/nunito_black"
-        android:text="Supprimer"
+        android:text="Anuuler"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -77,7 +77,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/supp_btn2" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_annuler" />
 
     <ImageView
         android:id="@+id/imageView3"
