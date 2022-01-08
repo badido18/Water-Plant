@@ -21,6 +21,7 @@ class FichePlantActivity : AppCompatActivity() {
         this.plant =  intent.getSerializableExtra("plant_id") as Plant
 
         binding.plantName.text = plant.name
+        binding.nameLatin.text = plant.latinName
         binding.prochainArro.text = plant.lastArosage
 
         binding.suppBtn.setOnClickListener {
@@ -28,7 +29,19 @@ class FichePlantActivity : AppCompatActivity() {
             finish()
         }
 
+        binding.modifBtn.setOnClickListener {
+            finish()
+        }
+
+        binding.modifBtn.setOnClickListener {
+            finish()
+        }
+
         binding.back.setOnClickListener {
+            finish()
+        }
+
+        binding.backText.setOnClickListener {
             finish()
         }
     }
