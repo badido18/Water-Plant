@@ -5,8 +5,9 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.waterplant.entities.Plant
-import com.example.waterplant.PlantItem
+import com.example.waterplant.room.PlantItem
 import com.example.waterplant.room.BDPlants
+import com.example.waterplant.room.IdPlant
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
     val dao = BDPlants.getDatabase(application).monDao()
@@ -18,9 +19,17 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
         }.start()
     }
+
     fun addPlant(plant: PlantItem){
         Thread {
             dao.insererPlant(plant)
+            loadPlants()
+        }.start()
+    }
+
+    fun deletePlant(id : Long){
+        Thread {
+            dao.deletePlant(IdPlant(id))
             loadPlants()
         }.start()
     }

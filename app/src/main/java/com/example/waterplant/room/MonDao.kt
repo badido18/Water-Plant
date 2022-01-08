@@ -1,4 +1,4 @@
-package com.example.waterplant
+package com.example.waterplant.room
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
@@ -20,10 +20,7 @@ data class IdPlant(
 
 @Dao
 interface MonDao {
-    /*
-    @Insert(entity=Plants::class)
-    fun insererPlant( auteur: String, titre: String, emplacement: String) :  Long
-*/
+
     @Insert(entity= Plant::class)
     fun insererPlant(plant : PlantItem) :  Long
 

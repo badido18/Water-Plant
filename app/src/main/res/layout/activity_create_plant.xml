@@ -78,7 +78,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/nom"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
@@ -86,7 +86,7 @@
                 android:fontFamily="@font/nunito_bold"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:text="Menthe"
+                android:hint="Nom Complet"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -102,10 +102,10 @@
                 android:text="Nom Latin"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+                app:layout_constraintTop_toBottomOf="@+id/nom" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName2"
+                android:id="@+id/nomLatin"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
@@ -113,7 +113,7 @@
                 android:fontFamily="@font/nunito_bold"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:text="Mentus"
+                android:hint="Nom Latin"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -129,7 +129,7 @@
                 android:text="Frequence d'arrosage"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+                app:layout_constraintTop_toBottomOf="@+id/nomLatin" />
 
             <Button
                 android:id="@+id/add_freq_arr"

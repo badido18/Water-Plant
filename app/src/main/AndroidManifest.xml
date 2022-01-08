@@ -8,21 +8,22 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.WaterPlant"
-        >
-        <activity android:name=".ModifyPlant"></activity>
+        android:theme="@style/Theme.WaterPlant">
+        <activity
+            android:name=".CreatePlantActivity"
+            android:exported="false" />
+        <activity android:name=".ModifyPlant" />
         <activity android:name=".Decaler" />
         <activity android:name=".Period" />
         <activity android:name=".FreqArrosage" />
         <activity android:name=".Arrosage" />
-        <activity android:name=".CreatePlant"/>
-
+        <activity android:name=".CreatePlant" />
         <activity android:name=".PlantFiche" />
         <activity android:name=".Splash" />
         <activity android:name=".MainActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

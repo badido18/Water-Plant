@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.waterplant.MonDao
+import com.example.waterplant.room.MonDao
 import com.example.waterplant.entities.Plant
 
 @Database(entities=[Plant::class], version = 2)
@@ -21,7 +21,7 @@ abstract class BDPlants : RoomDatabase() {
             if( instance != null )
                 return instance!!
             val db = Room.databaseBuilder( context.applicationContext,  BDPlants::class.java , "Plants")
-                .fallbackToDestructiveMigration() /* bd détruite si on change la version */
+                .fallbackToDestructiveMigration()
                 .build()
             instance = db
             return instance!!
