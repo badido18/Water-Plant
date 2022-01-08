@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
 
 
     fun testerArrosage(v: View)  {
-        Intent(this,ArrosageActivity::class.java).also {
+        Intent(this, ArrosageActivity::class.java).also {
             startActivity(it)
         }
     }
