@@ -10,7 +10,7 @@ import com.example.waterplant.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
     private val model  by lazy {ViewModelProvider(this).get(MainViewModel::class.java)}
-    private val adapter by lazy {MainAdapter(model.plants,binding)}
+    private val adapter by lazy {MainAdapter(model.plants)}
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,10 +18,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate( layoutInflater )
         setContentView(binding.root)
 
+        model.loadPlants()
+
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = adapter
-
-        model.loadPlants()
 
         model.plants.observe(this){
             adapter.setPlants(it)

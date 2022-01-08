@@ -6,7 +6,7 @@
     android:layout_height="150dp">
 
     <TextView
-        android:id="@+id/plant_name_item"
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -21,11 +21,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Prochain arrosage"
-        app:layout_constraintStart_toStartOf="@+id/plant_name_item"
-        app:layout_constraintTop_toBottomOf="@+id/plant_name_item" />
+        app:layout_constraintStart_toStartOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
 
     <TextView
-        android:id="@+id/date_time_prochain_arro_item"
+        android:id="@+id/nextArosage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"

@@ -16,5 +16,11 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
         }.start()
     }
+    fun addPlant(plant: PlantItem){
+        Thread {
+            dao.insererPlant(plant)
+            loadPlants()
+        }.start()
+    }
 
 }
