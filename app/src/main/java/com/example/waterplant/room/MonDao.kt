@@ -2,6 +2,7 @@ package com.example.waterplant
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.example.waterplant.entities.Plant
 
 data class  PlantItem(
     var name: String,

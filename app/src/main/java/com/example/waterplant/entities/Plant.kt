@@ -1,4 +1,4 @@
-package com.example.waterplant
+package com.example.waterplant.entities
 import androidx.room.Entity
 
 import androidx.room.PrimaryKey
