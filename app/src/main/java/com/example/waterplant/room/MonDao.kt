@@ -7,9 +7,9 @@ import com.example.waterplant.entities.Plant
 data class  PlantItem(
     var name: String,
     var latinName: String,
-    var freqArosage: String,
-    var nextArosage: String,
-    var freqNutriment: String,
+    var freqArosage: Int,
+    var lastArosage: String,
+    var freqNutriment: Int,
     var lastNutriment: String,
 //    var photo: String  // pour apres
 )

@@ -39,7 +39,7 @@ class CreatePlantActivity : AppCompatActivity() {
                 .setMessage("Veuillez remplir tout les champs svp").setCancelable(true)
                 .show()
         }else{
-            model.addPlant(PlantItem(nom,latin,"","","",""))
+            model.addPlant(PlantItem(nom,latin,0,"",0,""))
             //empty the fields
             binding.nom.setText("")
             binding.nomLatin.setText("")

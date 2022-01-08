@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.example.waterplant.room.MonDao
 import com.example.waterplant.entities.Plant
 
-@Database(entities=[Plant::class], version = 2)
+@Database(entities=[Plant::class], version = 3)
 abstract class BDPlants : RoomDatabase() {
 
     abstract fun monDao(): MonDao

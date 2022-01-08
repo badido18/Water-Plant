@@ -11,9 +11,9 @@ import com.example.waterplant.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
-    private val binding by lazy {ActivityMainBinding.inflate( layoutInflater )}
+    private val binding by lazy { ActivityMainBinding.inflate( layoutInflater ) }
     private val model  by lazy {ViewModelProvider(this).get(MainViewModel::class.java)}
-    private val adapter by lazy { MainAdapter() }
+    private val adapter by lazy { MainAdapter(this) }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
