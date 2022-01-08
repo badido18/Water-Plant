@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WaterPlant">
         <activity
+            android:name=".DecalerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ArrosageActivity"
+            android:exported="false" />
+        <activity
             android:name=".FichePlantActivity"
             android:exported="false" />
         <activity
