@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/back_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -46,11 +46,11 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="15dp"
         android:text="prochain arrosage"
         android:textColor="@color/MainGreen"
         app:layout_constraintStart_toStartOf="@+id/plant_name"
-        app:layout_constraintTop_toBottomOf="@+id/plant_name" />
+        app:layout_constraintTop_toBottomOf="@+id/name_latin" />
 
     <TextView
         android:id="@+id/prochain_arro"
@@ -76,29 +76,16 @@
         tools:src="@tools:sample/backgrounds/scenic" />
 
     <Button
-        android:id="@+id/freq_arro_btn"
-        android:layout_width="0dp"
-        android:layout_height="70sp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="40dp"
-        android:fontFamily="@font/nunito_black"
-        android:text="Frequence d'arrosage"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/plant_name"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
-
-    <Button
         android:id="@+id/modif_btn"
         android:layout_width="0dp"
         android:layout_height="70sp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/nunito_black"
         android:text="Modifier"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/freq_arro_btn"
-        app:layout_constraintStart_toStartOf="@+id/freq_arro_btn"
-        app:layout_constraintTop_toBottomOf="@+id/freq_arro_btn" />
+        app:layout_constraintEnd_toEndOf="@+id/imageView7"
+        app:layout_constraintStart_toStartOf="@+id/plant_name"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
     <Button
         android:id="@+id/supp_btn"
@@ -112,5 +99,16 @@
         app:layout_constraintEnd_toEndOf="@+id/modif_btn"
         app:layout_constraintStart_toStartOf="@+id/modif_btn"
         app:layout_constraintTop_toBottomOf="@+id/modif_btn" />
+
+    <TextView
+        android:id="@+id/name_latin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/nunito_bold"
+        android:text="Nom Latin"
+        android:textColor="@color/MainGreen"
+        app:layout_constraintStart_toStartOf="@+id/plant_name"
+        app:layout_constraintTop_toBottomOf="@+id/plant_name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
