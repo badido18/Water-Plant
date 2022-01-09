@@ -1,5 +1,6 @@
 package com.example.waterplant
 
+import android.icu.util.LocaleData
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -8,6 +9,9 @@ import com.example.waterplant.databinding.ActivityPlantFicheBinding
 import com.example.waterplant.entities.Plant
 import com.example.waterplant.room.IdPlant
 import com.example.waterplant.viewmodels.MainViewModel
+import java.text.DateFormat
+import java.time.LocalDate
+import java.util.*
 
 class FichePlantActivity : AppCompatActivity() {
 
@@ -21,6 +25,8 @@ class FichePlantActivity : AppCompatActivity() {
         this.plant =  intent.getSerializableExtra("plant_id") as Plant
 
         binding.plantName.text = plant.name
+        binding.nameLatin.text = plant.latinName
+
         binding.prochainArro.text = plant.lastArosage
 
         binding.suppBtn.setOnClickListener {
@@ -28,7 +34,19 @@ class FichePlantActivity : AppCompatActivity() {
             finish()
         }
 
+        binding.modifBtn.setOnClickListener {
+            finish()
+        }
+
+        binding.modifBtn.setOnClickListener {
+            finish()
+        }
+
         binding.back.setOnClickListener {
+            finish()
+        }
+
+        binding.backText.setOnClickListener {
             finish()
         }
     }
