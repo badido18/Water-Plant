@@ -68,4 +68,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun supprimerTous(view: View) {
+        model.deleteAllPlants()
+    }
 }

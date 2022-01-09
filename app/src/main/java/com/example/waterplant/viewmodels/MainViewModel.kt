@@ -34,4 +34,11 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }.start()
     }
 
+    fun deleteAllPlants(){
+        Thread {
+            dao.deleteAllPlants()
+            loadPlants()
+        }.start()
+    }
+
 }
