@@ -1,3 +1,66 @@
 <resources>
     <string name="app_name">WaterPlant</string>
+
+    <string-array name="name">
+        <item>Camus Albert</item>
+        <item>Dumas Alexandre</item>
+        <item>Dumas Alexandre</item>
+        <item>Hugo Victor</item>
+        <item>Hugo Victor</item>
+        <item>Houellebecq Michel</item>
+        <item>Houellebecq Michel</item>
+    </string-array>
+
+    <string-array name="latinName">
+        <item>La peste</item>
+        <item>Les trois mousquetaires</item>
+        <item>La reine Margot</item>
+        <item>Les misérables</item>
+        <item>Notre-Dame de Paris</item>
+        <item>Les particules élémentaires</item>
+        <item>Soumission</item>
+    </string-array>
+
+    <integer-array name="freqArosage">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>7</item>
+        <item>5</item>item>
+        <item>6</item>
+    </integer-array>
+
+    <string-array name="lastArosage">
+        <item>2020-01-13</item>
+        <item>2020-01-13</item>
+        <item>2020-01-13</item>
+        <item>2020-01-13</item>
+        <item>2020-01-13</item>
+        <item>2020-01-13</item>
+        <item>2020-01-13</item>
+    </string-array>
+
+
+    <integer-array name="freqNutriment">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>7</item>
+        <item>5</item>item>
+        <item>6</item>
+    </integer-array>
+
+    <string-array name="lastNutriment">
+        <item>2020-01-13</item>
+        <item>2020-01-13</item>
+        <item>2020-01-13</item>
+        <item>2020-01-13</item>
+        <item>2020-01-13</item>
+        <item>2020-01-13</item>
+        <item>2020-01-13</item>
+    </string-array>
+
+
 </resources>

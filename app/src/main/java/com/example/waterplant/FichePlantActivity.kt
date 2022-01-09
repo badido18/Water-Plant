@@ -27,7 +27,6 @@ class FichePlantActivity : AppCompatActivity() {
         binding.plantName.text = plant.name
         binding.nameLatin.text = plant.latinName
 
-        val nutri  = Calendar()
         binding.prochainArro.text = plant.lastArosage
 
         binding.suppBtn.setOnClickListener {
