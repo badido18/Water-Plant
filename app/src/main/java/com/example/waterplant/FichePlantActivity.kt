@@ -29,6 +29,8 @@ class FichePlantActivity : AppCompatActivity() {
 
         binding.prochainArro.text = plant.lastArosage
 
+        binding.prochainArro.text = plant.lastNutriment
+
         binding.suppBtn.setOnClickListener {
             deletePlant()
             finish()
