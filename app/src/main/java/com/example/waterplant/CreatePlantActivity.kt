@@ -88,6 +88,7 @@ class CreatePlantActivity : AppCompatActivity() {
                 .show()
         }else{
             model.addPlant(PlantItem(nom,latin,freqArrosage,date,freqNutriment,date))
+            finish()
         }
 
 
