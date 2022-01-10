@@ -13,8 +13,13 @@ import com.example.waterplant.viewmodels.MainViewModel
 
 class ArrosageActivity : AppCompatActivity() {
     private val model by lazy { ViewModelProvider(this).get(ArrosageViewModel::class.java) }
-    private val adapter by lazy { ArrosageAdapter(this) }
+    private val adapter by lazy { ArrosageAdapter(this, model) }
     private lateinit var binding: ActivityArrosageBinding // binding
+
+    companion object {  /* définir les constantes */
+        const val CHANNEL_ID = "phrases_channel"
+        const val NOTIFICATION_ID = 9
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

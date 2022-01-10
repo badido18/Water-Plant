@@ -6,51 +6,54 @@
     android:layout_height="match_parent"
     tools:context=".PlantFiche">
 
-    <ImageView
-        android:id="@+id/back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="36dp"
-        android:src="@drawable/ic_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
-        android:id="@+id/back_text"
+        android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:fontFamily="@font/nunito_bold"
-        android:text="Retour"
-        android:textColor="@color/MainGreen"
-        app:layout_constraintBottom_toBottomOf="@+id/back"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/back"
-        app:layout_constraintTop_toTopOf="@+id/back" />
+        android:layout_marginTop="16dp"
+        android:text="prochain arrosage nutriment"
+        app:layout_constraintStart_toStartOf="@+id/prochain_arro"
+        app:layout_constraintTop_toBottomOf="@+id/prochain_arro" />
+
 
     <TextView
         android:id="@+id/plant_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/nunito_black"
         android:text="Nom de la plante"
         android:textColor="@color/MainGreen"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/back"
-        app:layout_constraintTop_toBottomOf="@+id/back" />
+        app:layout_constraintStart_toStartOf="@+id/textView21"
+        app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="prochain arrosage"
-        android:textColor="@color/MainGreen"
+        android:text="prochain arrosage classique"
         app:layout_constraintStart_toStartOf="@+id/plant_name"
         app:layout_constraintTop_toBottomOf="@+id/name_latin" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="nom latin"
+        app:layout_constraintStart_toStartOf="@+id/plant_name"
+        app:layout_constraintTop_toBottomOf="@+id/plant_name" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="nom"
+        app:layout_constraintStart_toStartOf="@+id/back"
+        app:layout_constraintTop_toBottomOf="@+id/back" />
 
     <TextView
         android:id="@+id/prochain_arro"
@@ -64,15 +67,29 @@
         app:layout_constraintStart_toStartOf="@+id/plant_name"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
+    <TextView
+        android:id="@+id/prochain_nutri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/nunito_bold"
+        android:text="Lundi 25 dec 2022"
+        android:textColor="@color/MainGreen"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/textView16"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/plant_image"
         android:layout_width="0dp"
         android:layout_height="100sp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="40dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="@+id/plant_name"
-        app:layout_constraintTop_toBottomOf="@+id/prochain_arro"
+        app:layout_constraintTop_toBottomOf="@+id/prochain_nutri"
         tools:src="@tools:sample/backgrounds/scenic" />
 
     <Button
@@ -83,9 +100,9 @@
         android:fontFamily="@font/nunito_black"
         android:text="Modifier"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView7"
+        app:layout_constraintEnd_toEndOf="@+id/plant_image"
         app:layout_constraintStart_toStartOf="@+id/plant_name"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+        app:layout_constraintTop_toBottomOf="@+id/plant_image" />
 
     <Button
         android:id="@+id/supp_btn"
@@ -104,11 +121,43 @@
         android:id="@+id/name_latin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/nunito_bold"
         android:text="Nom Latin"
         android:textColor="@color/MainGreen"
         app:layout_constraintStart_toStartOf="@+id/plant_name"
-        app:layout_constraintTop_toBottomOf="@+id/plant_name" />
+        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="28dp"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="26dp"
+            android:layout_height="34dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/back_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="Retour"
+            android:textColor="@color/MainGreen"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView8"
+            app:layout_constraintStart_toEndOf="@+id/imageView8"
+            app:layout_constraintTop_toTopOf="@+id/imageView8" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

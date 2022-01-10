@@ -16,6 +16,7 @@
             android:layout_height="78dp"
             android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
+            android:scaleType="centerCrop"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@mipmap/ic_channel_foreground" />
@@ -27,7 +28,7 @@
             android:layout_marginTop="4dp"
             android:fontFamily="@font/nunito"
             android:text="Arrossage avec nutriments"
-            android:textColor="@color/purple_200"
+            android:textColor="#00897B"
             app:layout_constraintStart_toStartOf="@+id/name"
             app:layout_constraintTop_toBottomOf="@+id/name" />
 
@@ -48,24 +49,26 @@
             android:id="@+id/decaler"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/nunito_black"
             android:text="Decaler"
             android:textColor="@color/Orange"
             android:textSize="24sp"
-            app:layout_constraintStart_toEndOf="@+id/plant_image_item"
+            app:layout_constraintEnd_toStartOf="@+id/effectuer"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/type" />
 
         <TextView
             android:id="@+id/effectuer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
             android:fontFamily="@font/nunito_black"
             android:text="Effectuer"
             android:textColor="@color/MainGreen"
             android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/decaler"
             app:layout_constraintTop_toTopOf="@+id/decaler" />
     </androidx.constraintlayout.widget.ConstraintLayout>

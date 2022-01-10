@@ -1,6 +1,7 @@
 package com.example.waterplant.room
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.room.*
 import com.example.waterplant.entities.Plant
 
@@ -11,7 +12,7 @@ data class  PlantItem(
     var lastArosage: String,
     var freqNutriment: Int,
     var lastNutriment: String,
-//    var photo: String  // pour apres
+    var image: ByteArray? = null
 )
 
 data class IdPlant(
@@ -34,12 +35,12 @@ interface MonDao {
     fun updatePlant(plant: Plant)
 
     @Query("SELECT * FROM Plant")
-    fun getPlants(): LiveData<List<Plant>>
+    fun getPlants(): List<Plant>
 
-    @Query("SELECT * FROM Plant WHERE lower(name) LIKE lower(:pref) || '%'")
-    fun getPlantsParName( pref: String ): LiveData<List<Plant>>
+    @Query("SELECT * FROM Plant")
+    fun getPlantsLive(): LiveData<List<Plant>>
 
-    @Query("SELECT * FROM Plant WHERE lower(latinName) LIKE '%' || lower(:t) || '%'")
-    fun getPlantsParLatinName( t: String ) : LiveData<List<Plant>>
+    @Query("SELECT * FROM Plant where lower(name) LIKE '%' || lower(:nom)  || '%' or lower(latinName) LIKE '%' || lower(:nom)  || '%' ")
+    fun loadPartialName(nom: String): List<Plant>
 
 }
