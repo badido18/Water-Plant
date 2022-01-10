@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/calendar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DecalerActivity">
@@ -11,20 +12,20 @@
         android:layout_width="0dp"
         android:layout_height="70sp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="40dp"
         android:layout_marginEnd="40dp"
+        android:layout_marginBottom="12dp"
         android:backgroundTint="@color/Red"
         android:fontFamily="@font/nunito_black"
         android:onClick="back"
         android:text="Anuuler"
         android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/save"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/supp_btn3"
+        android:id="@+id/demain"
         android:layout_width="0dp"
         android:layout_height="70sp"
         android:layout_marginStart="40dp"
@@ -45,20 +46,42 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <Button
-        android:id="@+id/modif_btn2"
+        android:id="@+id/datePicker"
+        android:layout_width="0dp"
+        android:layout_height="70sp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/nunito_black"
+        android:shadowColor="@color/Red"
+        android:shadowDx="20"
+        android:shadowDy="20"
+        android:text="Calendrier"
+        android:textColor="@color/MainGreen"
+        android:textSize="22sp"
+        app:cornerRadius="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <Button
+        android:id="@+id/save"
         android:layout_width="0dp"
         android:layout_height="70sp"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="16dp"
+        android:clickable="false"
+        android:enabled="false"
         android:fontFamily="@font/nunito_black"
         android:text="Enregistrer"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAnnuler" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -100,30 +123,13 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/nunito_bold"
         android:text="ou"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.475" />
+        app:layout_constraintTop_toBottomOf="@+id/demain" />
 
-    <EditText
-        android:id="@+id/editTextDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:ems="10"
-        android:fontFamily="@font/nunito_black"
-        android:hint="11/12/2022"
-        android:inputType="date"
-        android:textAlignment="center"
-        android:textColorHint="@color/MainGreen"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

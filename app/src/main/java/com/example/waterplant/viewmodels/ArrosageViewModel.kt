@@ -15,24 +15,19 @@ import com.example.waterplant.room.IdPlant
 import java.time.LocalDate
 import java.time.Period
 import java.time.format.DateTimeFormatter
+import kotlin.math.log
 
 class ArrosageViewModel(application: Application) : AndroidViewModel(application) {
     val dao = BDPlants.getDatabase(application).monDao()
-    val allArrosages : LiveData<List<Plant>> = dao.getPlants()
-    val cc = this
-//    fun loadArrosages(){
-//        Log.d("ArrosageViewModel", "loadArrosages")
-//        Thread {
-//            this.allArrosages = dao.getPlants()
-//        }.start()
-//    }
+    var allArrosages : LiveData<List<Plant>> = dao.getPlantsLive()
 
-//    fun addPlant(plant: PlantItem){
-//        Thread {
-//            dao.insererPlant(plant)
-//            loadArrosages()
-//        }.start()
-//    }
+    fun updatePlant(plant: Plant){
+        Log.d("ZOZO","updatePlant $plant" )
+        Thread {
+            dao.updatePlant(plant)
+            allArrosages = dao.getPlantsLive()
+        }.start()
+    }
 //
 //    fun deletePlant(id : Long){
 //        Thread {

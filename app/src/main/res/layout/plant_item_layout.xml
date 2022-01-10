@@ -18,6 +18,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/nextArosage"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/name"
+            android:scaleType="centerCrop"
             app:srcCompat="@mipmap/ic_channel_foreground" />
 
         <TextView

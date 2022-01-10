@@ -1,4 +1,5 @@
 package com.example.waterplant.entities
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 
 import androidx.room.PrimaryKey
@@ -14,6 +15,9 @@ data class Plant(
     var lastArosage: String,
     var freqNutriment: Int,
     var lastNutriment: String,
-//    var photo: String  // pour apres
+
+    @ColumnInfo(typeAffinity = ColumnInfo.BLOB)
+    var image: ByteArray? = null
+
 ):Serializable
 

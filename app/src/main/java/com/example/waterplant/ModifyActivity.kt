@@ -6,41 +6,68 @@ import android.graphics.drawable.BitmapDrawable
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.TextUtils.isEmpty
+import android.text.TextUtils
+import android.util.Log
 import android.widget.SeekBar
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
-import com.example.waterplant.databinding.ActivityCreatePlantBinding
+import com.example.waterplant.databinding.ActivityModifyPlantBinding
+import com.example.waterplant.entities.Plant
 import com.example.waterplant.room.PlantItem
 import com.example.waterplant.utils.ImageManager
 import com.example.waterplant.utils.TimeManager
 import com.example.waterplant.utils.TimeManager.Companion.NEVER
 import com.example.waterplant.viewmodels.MainViewModel
 import java.lang.Math.floor
-import java.text.SimpleDateFormat
-import java.util.*
-import android.graphics.Bitmap as Bitmap1
 
-class CreatePlantActivity : AppCompatActivity() {
+class ModifyActivity : AppCompatActivity() {
 
-
-    private val binding by lazy { ActivityCreatePlantBinding .inflate( layoutInflater ) }
+    val binding by lazy { ActivityModifyPlantBinding .inflate( layoutInflater ) }
     private val model  by lazy { ViewModelProvider(this).get(MainViewModel::class.java)}
     private val TM by lazy { TimeManager() }
     private val IM by lazy { ImageManager() }
-    private var freqSeek = NEVER
-    private var nutriSeek = NEVER
+    private lateinit var plant: Plant
+    var nutriSeek = 0
+    var freqSeek = 0
     val REQUEST_CODE = 100
     var byteArrImage: ByteArray? = null
 
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        this.plant =  intent.getSerializableExtra("plant_id") as Plant
+
+        binding.nom.setText(plant.name)
+        binding.nomLatin.setText(plant.latinName)
+
+        try {
+            binding.imageView4.setImageBitmap(IM.getBitmap(plant.image!!))
+        }
+        catch (e:Exception){
+            Log.d("exception","no iamge - put default")
+        }
+
+        if(plant.freqArosage>31) {
+            binding.freqText.text = "non specifie"
+        }
+        else{
+            binding.freqText.text = "Chaque ${plant.freqArosage} jours"
+            freqSeek = plant.freqArosage
+            binding.freqSeek.progress = freqSeek*100/30
+        }
+
+        if(plant.freqNutriment> 31) {
+            binding.freqNutriText.text = "non specifie"
+        }
+        else{
+            binding.freqNutriText.text = "Chaque ${plant.freqNutriment} jours"
+            nutriSeek = plant.freqNutriment
+            binding.freqNutriSeek.progress = nutriSeek *100/30
+        }
 
         binding.enregistrer.setOnClickListener {
-            ajouterPlant()
+            updatePlant()
         }
 
         binding.annuler.setOnClickListener {
@@ -56,13 +83,12 @@ class CreatePlantActivity : AppCompatActivity() {
 
             }
             override fun onStartTrackingTouch(seek: SeekBar) {
-
             }
             override fun onStopTrackingTouch(seek: SeekBar) {
                 if (freqSeek == 0) freqSeek = NEVER
             }
         })
-        
+
         binding.freqNutriSeek.setOnSeekBarChangeListener(object :
             SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seek: SeekBar,
@@ -79,9 +105,9 @@ class CreatePlantActivity : AppCompatActivity() {
         })
 
         binding.addImageBtn.setOnClickListener {
-                val intent = Intent(Intent.ACTION_PICK)
-                intent.type = "image/*"
-                startActivityForResult(intent, REQUEST_CODE)
+            val intent = Intent(Intent.ACTION_PICK)
+            intent.type = "image/*"
+            startActivityForResult(intent, REQUEST_CODE)
         }
     }
 
@@ -89,27 +115,27 @@ class CreatePlantActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_CODE){
             binding.imageView4.setImageURI(data?.data)
-            byteArrImage = IM.getBytes(binding.imageView4)
+            plant.image = IM.getBytes(binding.imageView4)
         }
     }
 
-
     @RequiresApi(Build.VERSION_CODES.O)
-    fun ajouterPlant(){
-        val nom = binding.nom.text.toString()
-        val latin = binding.nomLatin.text.toString()
-        var freqArrosage = freqSeek
-        var freqNutriment = nutriSeek
+    fun updatePlant(){
+        plant.name = binding.nom.text.toString()
+        plant.latinName = binding.nomLatin.text.toString()
+        if (nutriSeek == 0) nutriSeek = NEVER
+        if (freqSeek == 0) freqSeek = NEVER
+        Log.d("FREQ SEKK",freqSeek.toString())
+        Log.d("NUTRI SEKK",nutriSeek.toString())
+        plant.freqArosage = freqSeek
+        plant.freqNutriment = nutriSeek
 
-
-        val date = TM.todayToString()
-
-        if(isEmpty(nom) || isEmpty(latin)){
+        if(TextUtils.isEmpty(plant.name) || TextUtils.isEmpty( plant.latinName)){
             AlertDialog.Builder(this)
                 .setMessage("Veuillez remplir tout les champs svp").setCancelable(true)
                 .show()
         }else{
-            model.addPlant(PlantItem(nom,latin,freqArrosage,date,freqNutriment,date,byteArrImage))
+            model.updatePlant(plant)
             finish()
         }
 
